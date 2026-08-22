@@ -110,30 +110,6 @@ Baseline policy:
 
 ---
 
-## Screenshots / Evidence
-
-- Router VM Configuration
-<p>
-  <img src="images/Router.png" alt="img" width="70%">
-</p>
-
-- Corp VM Configuration
-<p>
-  <img src="images/Corp.png" alt="img" width="70%">
-</p>
-
-- Guest VM Configuration
-<p>
-  <img src="images/Guest.png" alt="img" width="70%">
-</p>
-
-- DMZ Server VM Configuration
-<p>
-  <img src="images/DMZ Server.png" alt="img" width="70%">
-</p>
-
----
-
 ## Skills Demonstrated
 
 - **Network Segmentation**
