@@ -67,25 +67,25 @@ A dedicated virtual router VM routes between segments, provides DHCP, and enforc
    - `vlab-guest`
    - `vlab-dmz`
 2. Subnets:
-   - Corp: `192.168.10.0/24`
-   - Guest: `192.168.20.0/24`
-   - DMZ: `192.168.30.0/24`
+   - Corp: `10.10.10.0/24`
+   - Guest: `10.10.20.0/24`
+   - DMZ: `10.10.30.0/24`
 
 ### 2) Build the Router VM
 1. Deploy router.
 2. Assign NICs:
    - **WAN**: NAT
 3. Configure interface IPs:
-   - Corp: `192.168.10.1`
-   - Guest: `192.168.20.1`
-   - DMZ: `192.168.30.1`
+   - Corp: `10.10.10.1`
+   - Guest: `10.10.20.1`
+   - DMZ: `10.10.30.1`
 
 ### 3) Configure DHCP Per Segment
 1. Enable DHCP on each internal interface.
 2. Define scopes:
-   - Corp DHCP: `192.168.192.100-192.168.10.199`
-   - Guest DHCP: `192.168.20.100-192.168.20.199`
-   - DMZ: `192.168.30.100-192.168.30.150`
+   - Corp DHCP: `10.10.10.100-10.10.10.199`
+   - Guest DHCP: `10.10.20.100-10.10.20.199`
+   - DMZ: `10.10.30.100-10.10.30.150`
 
 ### 4) Configure DNS
 - Router based DNS forwarder for all segments
@@ -120,6 +120,73 @@ Baseline policy:
 - **Network Testing & Verification**
 - **Operational Troubleshooting** 
 - **Documentation & Architecture Communication**
+
+---
+
+## Images
+
+
+<p>
+  <img src="images/1.png" alt="Main Menu" width="70%">
+  <br>
+  <em>Fig 1: Router network interfaces displaying configured gateway IPs</em>
+</p>
+
+---
+
+<p>
+  <img src="images/2.png" alt="Main Menu" width="70%">
+  <br>
+  <em>Fig 2: VirtualBox Router VM settings</em>
+</p>
+
+---
+
+<p>
+  <img src="images/3.png" alt="Main Menu" width="70%">
+  <br>
+  <em>Fig 3: Internal network configuration for the Client VM attached to vlab-corp</em>
+</p>
+
+---
+
+<p>
+  <img src="images/4.png" alt="Main Menu" width="70%">
+  <br>
+  <em>Fig 4: Internal network configuration for the Guest VM attached to vlab-guest</em>
+</p>
+
+---
+
+<p>
+  <img src="images/5.png" alt="Main Menu" width="70%">
+  <br>
+  <em>Fig 5: Internal network configuration for the DMZ Server VM attached to vlab-dmz.</em>
+</p>
+
+---
+
+<p>
+  <img src="images/6.png" alt="Main Menu" width="70%">
+  <br>
+  <em>Fig 6: Intersegment routing table showing direct routes for all subnets and default WAN gateway</em>
+</p>
+
+---
+
+<p>
+  <img src="images/7.png" alt="Main Menu" width="70%">
+  <br>
+  <em>Fig 7: Validation of network controls. Guest client ping to Corp segment is blocked, while traffic to DMZ server succeeds</em>
+</p>
+
+---
+
+<p>
+  <img src="images/8.png" alt="Main Menu" width="70%">
+  <br>
+  <em>Fig 8: Active DHCP lease logs verified on the router via dnsmasq across Corp, Guest, and DMZ subnets</em>
+</p>
 
 ---
 
